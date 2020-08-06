@@ -1,0 +1,76 @@
+body {
+  background: white;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  background: lightgray;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[12];
+      grid-template-rows: repeat(12, 1fr);
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+}
+
+header,
+footer {
+  background: #333333;
+  color: whitesmoke;
+}
+
+header,
+footer,
+.mainSection {
+  grid-column: span 12;
+  padding: 1rem 1.5rem;
+}
+
+/********************************* Header ***********************************/
+header {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "headerTitle" "headerNav";
+  color: white;
+  background: #333333;
+}
+
+header .headerTitle {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: headerTitle;
+  font-size: 24px;
+  text-shadow: 2px 2px 1px grey;
+  font-weight: 600;
+  grid-column: span 3;
+}
+
+header nav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: headerNav;
+  font-size: 20px;
+  font-weight: 500;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 8;
+  grid-column: 5 / 13;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+/********************************* Main Section ***********************************/
+.mainSection {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 10fr;
+      grid-template-columns: 2fr 10fr;
+  border: 1px dotted red;
+  grid-column: span 12;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 9;
+  grid-row: 2 / 11;
+}
+/*# sourceMappingURL=style.css.map */

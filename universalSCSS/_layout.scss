@@ -1,0 +1,60 @@
+$headerAndFooterHeight: 75px;
+
+// main Container
+// should this be an id vs a class ?
+.container {
+  background: lightgray;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+header,
+footer {
+  background: #333333;
+  color: whitesmoke;
+}
+
+header,
+footer,
+.mainSection {
+  grid-column: span 12;
+  padding: 1rem 1.5rem;
+}
+/********************************* Header ***********************************/
+
+header {
+  display: grid;
+  grid-template-areas:
+    "headerTitle"
+    "headerNav";
+
+  color: white;
+  background: #333333;
+
+  .headerTitle {
+    grid-area: headerTitle;
+    font-size: 24px;
+    text-shadow: 2px 2px 1px grey;
+    font-weight: 600;
+    grid-column: span 3;
+  }
+
+  nav {
+    grid-area: headerNav;
+    font-size: 20px;
+    font-weight: 500;
+    grid-column: 5 / 13;
+    justify-self: end;
+  }
+}
+
+/********************************* Main Section ***********************************/
+
+.mainSection {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  border: 1px dotted red;
+  grid-column: span 12;
+  grid-row: 2 / 11;
+}
