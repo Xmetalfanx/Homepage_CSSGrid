@@ -2,11 +2,12 @@ $headerAndFooterHeight: 75px;
 
 // main Container
 // should this be an id vs a class ?
-.container {
+.grid-container {
   background: lightgray;
   display: grid;
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-rows: repeat(autofit, minmax(100px, 1fr));
   grid-template-columns: repeat(12, 1fr);
+  height: 100%;
 }
 
 header,
@@ -38,14 +39,22 @@ header {
     text-shadow: 2px 2px 1px grey;
     font-weight: 600;
     grid-column: span 3;
+
   }
 
   nav {
     grid-area: headerNav;
     font-size: 20px;
     font-weight: 500;
-    grid-column: 5 / 13;
+    grid-column: auto / 13;
     justify-self: end;
+  }
+
+  *
+  {
+  color: inherit;
+    background-color: inherit;
+
   }
 }
 

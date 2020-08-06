@@ -1,19 +1,21 @@
-body {
+* {
   background: white;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 100%;
 }
 
-.container {
+.grid-container {
   background: lightgray;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[12];
-      grid-template-rows: repeat(12, 1fr);
+  -ms-grid-rows: (minmax(100px, 1fr))[autofit];
+      grid-template-rows: repeat(autofit, minmax(100px, 1fr));
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
+  height: 100%;
 }
 
 header,
@@ -54,11 +56,14 @@ header nav {
   grid-area: headerNav;
   font-size: 20px;
   font-weight: 500;
-  -ms-grid-column: 5;
-  -ms-grid-column-span: 8;
-  grid-column: 5 / 13;
+  grid-column: auto / 13;
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+header * {
+  color: inherit;
+  background-color: inherit;
 }
 
 /********************************* Main Section ***********************************/
