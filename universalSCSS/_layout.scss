@@ -1,69 +1,109 @@
-$headerAndFooterHeight: 75px;
-
 // main Container
 // should this be an id vs a class ?
-.grid-container {
-  background: lightgray;
-  display: grid;
-  grid-template-rows: repeat(autofit, minmax(100px, 1fr));
-  grid-template-columns: repeat(12, 1fr);
-  height: 100%;
-}
-
 header,
 footer {
-  background: #333333;
+	background: #333333;
   color: whitesmoke;
+  grid-column: span 4;
+
 }
 
-header,
-footer,
-.mainSection {
-  grid-column: span 12;
-  padding: 1rem 1.5rem;
+footer {
+	grid-area: footer;
 }
-/********************************* Header ***********************************/
 
+.mainSection,
 header {
-  display: grid;
-  grid-template-areas:
-    "headerTitle"
-    "headerNav";
+	grid-area: header;
+  align-content: center;
+	display: grid;
+  grid-template-areas: "sectionTitle . . nav";
+  padding: 1% 2%;
 
-  color: white;
-  background: #333333;
+	* {
+		color: inherit;
+		background-color: inherit;
+		padding: inherit;
+		text-shadow: 2px 2px 1px grey;
+	}
 
-  .headerTitle {
-    grid-area: headerTitle;
-    font-size: 24px;
-    text-shadow: 2px 2px 1px grey;
-    font-weight: 600;
-    grid-column: span 3;
+	.headerTitle {
+		font-size: 24px;
+		font-weight: 600;
+		grid-area: sectionTitle;
+	}
 
-  }
-
-  nav {
-    grid-area: headerNav;
-    font-size: 20px;
-    font-weight: 500;
-    grid-column: auto / 13;
+	nav {
+		font-size: 20px;
+		font-weight: 500;
+    grid-area: nav;
     justify-self: end;
-  }
-
-  *
-  {
-  color: inherit;
-    background-color: inherit;
-
-  }
+	}
 }
 
-/********************************* Main Section ***********************************/
+.middleSection {
+	display: grid;
+	grid-template-areas: "sidebar main main main";
 
-.mainSection {
-  display: grid;
-  grid-template-columns: 2fr 10fr;
-  border: 1px dotted red;
-  grid-column: span 12;
-  grid-row: 2 / 11;
+	grid-column: span 4;
+	grid-gap: 4px;
+
+	* {
+		padding: 0 1%;
+	}
+
+	sidebar {
+		grid-area: sidebar;
+		background-color: pink;
+	}
+
+	main {
+		background-color: skyblue;
+		grid-area: main;
+	}
+}
+
+@media only screen and (max-width: 700px)
+{
+  header, footer 
+  {
+    grid-column: span 4;
+  }
+
+
+  .middleSection {
+    display: grid;
+    grid-template-areas: 
+    "sidebar"
+    "main";
+  
+    grid-gap: 4px;
+    grid-row: span 2;
+  
+    * {
+      padding: 0 1%;
+    }
+  
+    sidebar {
+      grid-area: sidebar;
+      background-color: pink;
+    }
+  
+    main {
+      background-color: skyblue;
+      grid-area: main;
+    }
+  }
+
+  header {
+    grid-template-areas: "sectionTitle nav";
+  
+    * {
+      color: inherit;
+      background-color: inherit;
+      padding: inherit;
+      text-shadow: 2px 2px 1px grey;
+    }
+  
+  }
 }

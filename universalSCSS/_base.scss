@@ -1,7 +1,36 @@
+$headerAndFooterHeight: 75px;
+
 * {
-  background: white;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: $headerAndFooterHeight 1fr $headerAndFooterHeight;
+  // grid-template-columns: (4, 1fr);
+  grid-template-areas:
+    "header   header  header  header"
+    "sidebar  main    main    main"
+    "footer   footer  footer  footer";
+
+  background: white;
+}
+
+@media only screen and (max-width: 700px)
+{
+  body {
+    display: grid;
+    grid-template-rows: $headerAndFooterHeight 1fr 1fr $headerAndFooterHeight;
+    // grid-template-columns: (4, 1fr);
+    grid-template-areas:
+      "header" 
+      "sidebar"
+      "main"  
+      "footer";
+  
+  }
+  
 }

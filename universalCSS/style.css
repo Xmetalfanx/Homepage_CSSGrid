@@ -1,5 +1,4 @@
 * {
-  background: white;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -7,75 +6,181 @@
   height: 100%;
 }
 
-.grid-container {
-  background: lightgray;
+body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (minmax(100px, 1fr))[autofit];
-      grid-template-rows: repeat(autofit, minmax(100px, 1fr));
+  -ms-grid-rows: 75px 1fr 75px;
+      grid-template-rows: 75px 1fr 75px;
+<<<<<<< HEAD
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
   height: 100%;
+=======
+      grid-template-areas: "header   header  header  header" "sidebar  main    main    main" "footer   footer  footer  footer";
+  background: white;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 75px 1fr 1fr 75px;
+        grid-template-rows: 75px 1fr 1fr 75px;
+        grid-template-areas: "header"  "sidebar" "main"   "footer";
+  }
+>>>>>>> cbc0e2f... Testing
 }
 
 header,
 footer {
   background: #333333;
   color: whitesmoke;
+  grid-column: span 4;
 }
 
-header,
-footer,
-.mainSection {
-  grid-column: span 12;
-  padding: 1rem 1.5rem;
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: footer;
+}
+
+<<<<<<< HEAD
+.mainSection,
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 /********************************* Header ***********************************/
 header {
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: "headerTitle" "headerNav";
   color: white;
-  background: #333333;
-}
-
-header .headerTitle {
+  background-color: #333333;
+=======
+header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: headerTitle;
-  font-size: 24px;
-  text-shadow: 2px 2px 1px grey;
-  font-weight: 600;
-  grid-column: span 3;
-}
-
-header nav {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: headerNav;
-  font-size: 20px;
-  font-weight: 500;
-  grid-column: auto / 13;
-  -ms-grid-column-align: end;
-      justify-self: end;
+  -ms-grid-column-span: 4;
+  grid-area: header;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "sectionTitle . . nav";
+  padding: 1% 2%;
+>>>>>>> cbc0e2f... Testing
 }
 
 header * {
   color: inherit;
   background-color: inherit;
+<<<<<<< HEAD
+=======
+  padding: inherit;
+  text-shadow: 2px 2px 1px grey;
+>>>>>>> cbc0e2f... Testing
+}
+
+header .headerTitle {
+  font-size: 24px;
+  font-weight: 600;
+<<<<<<< HEAD
+=======
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: sectionTitle;
+>>>>>>> cbc0e2f... Testing
+}
+
+header nav {
+  font-size: 20px;
+  font-weight: 500;
+<<<<<<< HEAD
 }
 
 /********************************* Main Section ***********************************/
 .mainSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px dotted red;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+=======
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: nav;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.middleSection {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 10fr;
-      grid-template-columns: 2fr 10fr;
-  border: 1px dotted red;
-  grid-column: span 12;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 9;
-  grid-row: 2 / 11;
+      grid-template-areas: "sidebar main main main";
+  grid-column: span 4;
+  grid-gap: 4px;
+}
+
+.middleSection * {
+  padding: 0 1%;
+}
+
+.middleSection sidebar {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+  background-color: pink;
+}
+
+.middleSection main {
+  background-color: skyblue;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+}
+
+@media only screen and (max-width: 700px) {
+  header, footer {
+    grid-column: span 4;
+  }
+  .middleSection {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "sidebar" "main";
+    grid-gap: 4px;
+    grid-row: span 2;
+  }
+  .middleSection * {
+    padding: 0 1%;
+  }
+  .middleSection sidebar {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: sidebar;
+    background-color: pink;
+  }
+  .middleSection main {
+    background-color: skyblue;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: main;
+  }
+  header {
+        grid-template-areas: "sectionTitle nav";
+  }
+  header * {
+    color: inherit;
+    background-color: inherit;
+    padding: inherit;
+    text-shadow: 2px 2px 1px grey;
+  }
+>>>>>>> cbc0e2f... Testing
 }
 /*# sourceMappingURL=style.css.map */
