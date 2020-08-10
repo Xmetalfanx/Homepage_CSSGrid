@@ -2,8 +2,8 @@
 // should this be an id vs a class ?
 header,
 footer {
-  background: #333333;
-  color: whitesmoke;
+  background: var(--darkGray1);
+  color: var(--whitesmoke);
   grid-column: span 4;
 }
 
@@ -13,20 +13,20 @@ footer {
 
 .mainSection,
 header {
-  grid-area: header;
   align-content: center;
   display: grid;
-  grid-template-areas: "sectionTitle . . nav";
+  grid-area: header;
+  grid-template-areas: 'sectionTitle . . nav';
   padding: 1% 2%;
 
   * {
-    color: inherit;
     background-color: inherit;
+    color: inherit;
     padding: inherit;
-    text-shadow: 2px 2px 1px grey;
+    text-shadow: 2px 2px 1px var(--gray);
   }
 
-  .headerTitle {
+  .header-title {
     font-size: 24px;
     font-weight: 600;
     grid-area: sectionTitle;
@@ -40,24 +40,23 @@ header {
   }
 }
 
-.middleSection {
+.middle-section {
   display: grid;
-  grid-template-areas: "sidebar main main main";
-
   grid-column: span 4;
   grid-gap: 4px;
+  grid-template-areas: 'sidebar main main main';
 
   * {
     padding: 0 1%;
   }
 
   sidebar {
+    background-color: var(--rosegold);
     grid-area: sidebar;
-    background-color: pink;
   }
 
   main {
-    background-color: skyblue;
+    background-color: var(--royalblue);
     grid-area: main;
   }
 }
@@ -68,38 +67,30 @@ header {
     grid-column: span 4;
   }
 
-  .middleSection {
+  .middle-section {
     display: grid;
-    grid-template-areas:
-      "sidebar"
-      "main";
-
     grid-gap: 4px;
     grid-row: span 2;
+    grid-template-areas:
+    'sidebar'
+    'main';
+
+    margin: auto 0;
 
     * {
-      padding: 0 1%;
+      padding: 1% 0;
     }
 
-    sidebar {
-      grid-area: sidebar;
-      background-color: pink;
-    }
-
-    main {
-      background-color: skyblue;
-      grid-area: main;
-    }
   }
 
   header {
-    grid-template-areas: "sectionTitle nav";
+    grid-template-areas: 'sectionTitle nav';
 
     * {
-      color: inherit;
       background-color: inherit;
+      color: inherit;
       padding: inherit;
-      text-shadow: 2px 2px 1px grey;
+      text-shadow: 2px 2px 1px var(--gray);
     }
   }
 }

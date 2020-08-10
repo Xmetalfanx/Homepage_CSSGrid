@@ -1,4 +1,3 @@
-
 extends: stylelint-config-standard
 syntax: scss
 plugins:
@@ -27,4 +26,4 @@ rules:
       message: Using !important is considered a bad practice. Avoid using it.
   declaration-block-no-duplicate-properties: true
   no-descending-specificity: null
-  color-hex-length: long
+  hex-length: long

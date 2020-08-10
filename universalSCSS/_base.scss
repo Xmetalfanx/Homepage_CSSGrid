@@ -1,36 +1,32 @@
-$headerAndFooterHeight: 75px;
+$header-and-footer-height: 75px;
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  background: var(--white);
   display: grid;
-  grid-template-rows: $headerAndFooterHeight 1fr $headerAndFooterHeight;
-  // grid-template-columns: (4, 1fr);
   grid-template-areas:
-    "header   header  header  header"
-    "sidebar  main    main    main"
-    "footer   footer  footer  footer";
-
-  background: white;
+  'header   header  header  header'
+  'sidebar  main    main    main'
+  'footer   footer  footer  footer';
+  grid-template-columns: (4, 1fr);
+  grid-template-rows: $header-and-footer-height 1fr $header-and-footer-height;
 }
 
-@media only screen and (max-width: 700px)
-{
+@media only screen and (max-width: 700px) {
   body {
     display: grid;
-    grid-template-rows: $headerAndFooterHeight 1fr 1fr $headerAndFooterHeight;
-    // grid-template-columns: (4, 1fr);
     grid-template-areas:
-      "header" 
-      "sidebar"
-      "main"  
-      "footer";
-  
+    'header'
+    'sidebar'
+    'main'
+    'footer';
+    grid-template-columns: (2, 1fr);
+    grid-template-rows: $header-and-footer-height 1fr 1fr $header-and-footer-height;
   }
-  
 }
