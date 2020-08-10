@@ -1,0 +1,22 @@
+{
+  "name": "homepage_cssgrid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xmetalfanx/Homepage_CSSGrid.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xmetalfanx/Homepage_CSSGrid/issues"
+  },
+  "homepage": "https://github.com/Xmetalfanx/Homepage_CSSGrid#readme",
+  "devDependencies": {
+    "sass-lint": "^1.13.1"
+  }
+}

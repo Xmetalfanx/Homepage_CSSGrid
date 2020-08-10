@@ -2,93 +2,90 @@
 // should this be an id vs a class ?
 header,
 footer {
-	background: #333333;
+  background: #333333;
   color: whitesmoke;
   grid-column: span 4;
-
 }
 
 footer {
-	grid-area: footer;
+  grid-area: footer;
 }
 
 .mainSection,
 header {
-	grid-area: header;
+  grid-area: header;
   align-content: center;
-	display: grid;
+  display: grid;
   grid-template-areas: "sectionTitle . . nav";
   padding: 1% 2%;
 
-	* {
-		color: inherit;
-		background-color: inherit;
-		padding: inherit;
-		text-shadow: 2px 2px 1px grey;
-	}
+  * {
+    color: inherit;
+    background-color: inherit;
+    padding: inherit;
+    text-shadow: 2px 2px 1px grey;
+  }
 
-	.headerTitle {
-		font-size: 24px;
-		font-weight: 600;
-		grid-area: sectionTitle;
-	}
+  .headerTitle {
+    font-size: 24px;
+    font-weight: 600;
+    grid-area: sectionTitle;
+  }
 
-	nav {
-		font-size: 20px;
-		font-weight: 500;
+  nav {
+    font-size: 20px;
+    font-weight: 500;
     grid-area: nav;
     justify-self: end;
-	}
+  }
 }
 
 .middleSection {
-	display: grid;
-	grid-template-areas: "sidebar main main main";
+  display: grid;
+  grid-template-areas: "sidebar main main main";
 
-	grid-column: span 4;
-	grid-gap: 4px;
+  grid-column: span 4;
+  grid-gap: 4px;
 
-	* {
-		padding: 0 1%;
-	}
+  * {
+    padding: 0 1%;
+  }
 
-	sidebar {
-		grid-area: sidebar;
-		background-color: pink;
-	}
+  sidebar {
+    grid-area: sidebar;
+    background-color: pink;
+  }
 
-	main {
-		background-color: skyblue;
-		grid-area: main;
-	}
+  main {
+    background-color: skyblue;
+    grid-area: main;
+  }
 }
 
-@media only screen and (max-width: 700px)
-{
-  header, footer 
-  {
+@media only screen and (max-width: 700px) {
+  header,
+  footer {
     grid-column: span 4;
   }
 
-
   .middleSection {
     display: grid;
-    grid-template-areas: 
-    "sidebar"
-    "main";
-  
+    grid-template-areas:
+      "sidebar"
+      "main";
+
     grid-gap: 4px;
     grid-row: span 2;
-  
+
     * {
       padding: 0 1%;
     }
-  
+
     sidebar {
       grid-area: sidebar;
       background-color: pink;
     }
-  
+
     main {
       background-color: skyblue;
       grid-area: main;
@@ -97,13 +94,12 @@ header {
 
   header {
     grid-template-areas: "sectionTitle nav";
-  
+
     * {
       color: inherit;
       background-color: inherit;
       padding: inherit;
       text-shadow: 2px 2px 1px grey;
     }
-  
   }
 }

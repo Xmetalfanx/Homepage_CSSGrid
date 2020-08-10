@@ -1,0 +1,30 @@
+
+extends: stylelint-config-standard
+syntax: scss
+plugins:
+  - stylelint-scss
+rules:
+  max-empty-lines:
+    - 3
+    - severity: warning
+      message: Cut out Empty space. Max empty lines are 3.
+  indentation:
+    - 2
+    - severity: warning
+      message: Try using 2 spaces indents.
+  property-no-vendor-prefix:
+    - true
+    - severity: warning
+      message: Use Auto prefixer instead of manually writing vendor prefixes
+  value-no-vendor-prefix:
+    - true
+    - severity: warning
+      message: Use Auto prefixer instead of manually writing vendor prefixes
+  selector-max-id: 0
+  declaration-no-important:
+    - true
+    - severity: warning
+      message: Using !important is considered a bad practice. Avoid using it.
+  declaration-block-no-duplicate-properties: true
+  no-descending-specificity: null
+  color-hex-length: long

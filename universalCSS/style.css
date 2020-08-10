@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   height: 100%;
 }
 
@@ -10,6 +9,7 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 75px 1fr 75px;
+<<<<<<< HEAD
       grid-template-rows: 75px 1fr 75px;
 <<<<<<< HEAD
   -ms-grid-columns: (1fr)[12];
@@ -17,6 +17,12 @@ body {
   height: 100%;
 =======
       grid-template-areas: "header   header  header  header" "sidebar  main    main    main" "footer   footer  footer  footer";
+=======
+  grid-template-rows: 75px 1fr 75px;
+  grid-template-areas:
+    "header   header  header  header" "sidebar  main    main    main"
+    "footer   footer  footer  footer";
+>>>>>>> 9f40b10... Installed NPM and some utilss to clean up issues
   background: white;
 }
 
@@ -25,8 +31,8 @@ body {
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: 75px 1fr 1fr 75px;
-        grid-template-rows: 75px 1fr 1fr 75px;
-        grid-template-areas: "header"  "sidebar" "main"   "footer";
+    grid-template-rows: 75px 1fr 1fr 75px;
+    grid-template-areas: "header" "sidebar" "main" "footer";
   }
 >>>>>>> cbc0e2f... Testing
 }
@@ -66,11 +72,10 @@ header {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: header;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "sectionTitle . . nav";
+  grid-template-areas: "sectionTitle . . nav";
   padding: 1% 2%;
 >>>>>>> cbc0e2f... Testing
 }
@@ -116,13 +121,13 @@ header nav {
   -ms-grid-column: 4;
   grid-area: nav;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
 }
 
 .middleSection {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "sidebar main main main";
+  grid-template-areas: "sidebar main main main";
   grid-column: span 4;
   grid-gap: 4px;
 }
@@ -147,13 +152,14 @@ header nav {
 }
 
 @media only screen and (max-width: 700px) {
-  header, footer {
+  header,
+  footer {
     grid-column: span 4;
   }
   .middleSection {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "sidebar" "main";
+    grid-template-areas: "sidebar" "main";
     grid-gap: 4px;
     grid-row: span 2;
   }
@@ -173,7 +179,7 @@ header nav {
     grid-area: main;
   }
   header {
-        grid-template-areas: "sectionTitle nav";
+    grid-template-areas: "sectionTitle nav";
   }
   header * {
     color: inherit;
@@ -183,4 +189,3 @@ header nav {
   }
 >>>>>>> cbc0e2f... Testing
 }
-/*# sourceMappingURL=style.css.map */
