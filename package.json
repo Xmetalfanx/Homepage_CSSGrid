@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Xmetalfanx/Homepage_CSSGrid#readme",
   "devDependencies": {
+    "prettier": "2.0.5",
     "sass-lint": "^1.13.1"
   }
 }
