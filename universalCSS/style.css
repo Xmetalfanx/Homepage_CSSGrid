@@ -33,19 +33,16 @@
 }
 
 :root {
-  --whitesmoke: #f5f5f5;
+  --gray: #808080;
   --darkGray1: #333333;
   --royalblue: #4169e1;
   --rosegold: #b76e79;
-  --gray: #808080;
+  --whitesmoke: #f5f5f5;
 }
 
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -53,21 +50,16 @@ body {
   display: -ms-grid;
   display: grid;
       grid-template-areas: 'header   header  header  header' 'sidebar  main    main    main' 'footer   footer  footer  footer';
-  -ms-grid-columns: 4, 1fr;
-      grid-template-columns: 4, 1fr;
-  -ms-grid-rows: 75px 1fr 75px;
-      grid-template-rows: 75px 1fr 75px;
+  height: 100vh;
+  -ms-grid-rows: 75px auto 75px;
+      grid-template-rows: 75px auto 75px;
 }
 
 @media only screen and (max-width: 700px) {
   body {
-    display: -ms-grid;
-    display: grid;
-        grid-template-areas: 'header' 'sidebar' 'main' 'footer';
-    -ms-grid-columns: 2, 1fr;
-        grid-template-columns: 2, 1fr;
-    -ms-grid-rows: 75px 1fr 1fr 75px;
-        grid-template-rows: 75px 1fr 1fr 75px;
+        grid-template-areas: 'header header' 'sidebar sidebar' 'main main' 'footer footer';
+    -ms-grid-rows: (1fr)[4];
+        grid-template-rows: repeat(4, 1fr);
   }
 }
 
@@ -85,7 +77,6 @@ footer {
   grid-area: footer;
 }
 
-.mainSection,
 header {
   -ms-flex-line-pack: center;
       align-content: center;
@@ -99,7 +90,6 @@ header {
   padding: 1% 2%;
 }
 
-.mainSection *,
 header * {
   background-color: inherit;
   color: inherit;
@@ -107,7 +97,6 @@ header * {
   text-shadow: 2px 2px 1px var(--gray);
 }
 
-.mainSection .header-title,
 header .header-title {
   font-size: 24px;
   font-weight: 600;
@@ -116,7 +105,6 @@ header .header-title {
   grid-area: sectionTitle;
 }
 
-.mainSection nav,
 header nav {
   font-size: 20px;
   font-weight: 500;
@@ -133,6 +121,7 @@ header nav {
   grid-column: span 4;
   grid-gap: 4px;
       grid-template-areas: 'sidebar main main main';
+  height: 100%;
 }
 
 .middle-section * {
@@ -154,30 +143,20 @@ header nav {
   grid-area: main;
 }
 
-@media only screen and (max-width: 700px) {
+/************************** First Media Query *******/
+@media (min-width: var(--breakpoint-md)) {
   header,
   footer {
-    grid-column: span 4;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
   .middle-section {
-    display: -ms-grid;
-    display: grid;
-    grid-gap: 4px;
     grid-row: span 2;
-        grid-template-areas: 'sidebar' 'main';
+        grid-template-areas: 'sidebar sidebar' 'main main';
     margin: auto 0;
-  }
-  .middle-section * {
-    padding: 1% 0;
   }
   header {
         grid-template-areas: 'sectionTitle nav';
-  }
-  header * {
-    background-color: inherit;
-    color: inherit;
-    padding: inherit;
-    text-shadow: 2px 2px 1px var(--gray);
   }
 }
 /*# sourceMappingURL=style.css.map */

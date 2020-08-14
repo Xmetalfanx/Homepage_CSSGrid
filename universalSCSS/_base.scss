@@ -2,31 +2,26 @@ $header-and-footer-height: 75px;
 
 * {
   box-sizing: border-box;
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   background: var(--white);
   display: grid;
   grid-template-areas:
-  'header   header  header  header'
-  'sidebar  main    main    main'
-  'footer   footer  footer  footer';
-  grid-template-columns: (4, 1fr);
-  grid-template-rows: $header-and-footer-height 1fr $header-and-footer-height;
+    'header   header  header  header'
+    'sidebar  main    main    main'
+    'footer   footer  footer  footer';
+  height: 100vh;
+  grid-template-rows: $header-and-footer-height auto $header-and-footer-height;
 }
 
 @media only screen and (max-width: 700px) {
   body {
-    display: grid;
     grid-template-areas:
-    'header'
-    'sidebar'
-    'main'
-    'footer';
-    grid-template-columns: (2, 1fr);
-    grid-template-rows: $header-and-footer-height 1fr 1fr $header-and-footer-height;
+      'header header'
+      'sidebar sidebar'
+      'main main'
+      'footer footer';
+    grid-template-rows: repeat(4, 1fr);
   }
 }

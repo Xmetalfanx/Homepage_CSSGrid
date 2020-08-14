@@ -1,3 +1,4 @@
+
 // main Container
 // should this be an id vs a class ?
 header,
@@ -11,7 +12,6 @@ footer {
   grid-area: footer;
 }
 
-.mainSection,
 header {
   align-content: center;
   display: grid;
@@ -45,6 +45,7 @@ header {
   grid-column: span 4;
   grid-gap: 4px;
   grid-template-areas: 'sidebar main main main';
+  height: 100%;
 
   * {
     padding: 0 1%;
@@ -60,37 +61,23 @@ header {
     grid-area: main;
   }
 }
-
-@media only screen and (max-width: 700px) {
+/************************** First Media Query *******/
+@media (min-width: var(--breakpoint-md)) {
   header,
   footer {
-    grid-column: span 4;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .middle-section {
-    display: grid;
-    grid-gap: 4px;
     grid-row: span 2;
     grid-template-areas:
-    'sidebar'
-    'main';
+      'sidebar sidebar'
+      'main main';
 
     margin: auto 0;
-
-    * {
-      padding: 1% 0;
-    }
-
   }
 
   header {
     grid-template-areas: 'sectionTitle nav';
-
-    * {
-      background-color: inherit;
-      color: inherit;
-      padding: inherit;
-      text-shadow: 2px 2px 1px var(--gray);
-    }
   }
 }

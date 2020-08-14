@@ -27,3 +27,4 @@ rules:
   declaration-block-no-duplicate-properties: true
   no-descending-specificity: null
   hex-length: long
+  value-list-comma-newline-after: always-multi-line
