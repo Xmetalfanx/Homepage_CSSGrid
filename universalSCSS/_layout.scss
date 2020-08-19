@@ -1,15 +1,25 @@
-
 // main Container
 // should this be an id vs a class ?
+
 header,
 footer {
   background: var(--darkGray1);
   color: var(--whitesmoke);
-  grid-column: span 4;
+  padding: 1% 2%;
 }
 
 footer {
+  display: grid;
   grid-area: footer;
+  grid-template-areas: 'credits credits social-media social-media';
+
+  .credits {
+    grid-area: credits;
+  }
+
+  .social-media {
+    grid-area: social-media;
+  }
 }
 
 header {
@@ -17,7 +27,6 @@ header {
   display: grid;
   grid-area: header;
   grid-template-areas: 'sectionTitle . . nav';
-  padding: 1% 2%;
 
   * {
     background-color: inherit;
@@ -40,27 +49,18 @@ header {
   }
 }
 
-.middle-section {
-  display: grid;
-  grid-column: span 4;
-  grid-gap: 4px;
-  grid-template-areas: 'sidebar main main main';
-  height: 100%;
-
-  * {
-    padding: 0 1%;
-  }
-
-  sidebar {
-    background-color: var(--rosegold);
-    grid-area: sidebar;
-  }
-
-  main {
-    background-color: var(--royalblue);
-    grid-area: main;
-  }
+sidebar {
+  background-color: var(--rosegold);
+  grid-area: sidebar;
+  grid-column: 1 / 2;
 }
+
+main {
+  background-color: var(--royalblue);
+  grid-area: main;
+  grid-column: 2 / 5;
+}
+
 /************************** First Media Query *******/
 @media (min-width: var(--breakpoint-md)) {
   header,
@@ -68,16 +68,17 @@ header {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .middle-section {
-    grid-row: span 2;
-    grid-template-areas:
-      'sidebar sidebar'
-      'main main';
-
-    margin: auto 0;
-  }
-
   header {
     grid-template-areas: 'sectionTitle nav';
   }
+}
+
+// New idea for screen readers
+.hiddenAccessLinkText {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
