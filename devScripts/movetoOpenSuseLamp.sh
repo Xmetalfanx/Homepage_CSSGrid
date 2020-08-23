@@ -10,7 +10,7 @@ printf "\nCSS file compiled\n"
 # 2. Apply auto-prefixer
 printf "\nApplying auto-prefixer\n"
 npx postcss universalSCSS/raw_style.css --use autoprefixer -o universalCSS/style.css
-read -p "Auto-prefixer compiled"
+printf "Auto-prefixer compiled"
 
 
 sudo rsync  --exclude "node_modules" --exclude "framework" --exclude "database" -ruhv * /srv/www/htdocs/
@@ -21,3 +21,5 @@ echo -e "Done"
 #  Cleanup
 rm universalSCSS/raw_style*
 rm universalSCSS/*.css*
+
+clear

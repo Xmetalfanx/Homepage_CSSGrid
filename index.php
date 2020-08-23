@@ -14,10 +14,7 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <div class="header-title">Title Here</div>
-      <nav>Nav Here</nav>
-    </header>
+    <?php include 'modules/header.php'; ?>
     <sidebar>Sidebar</sidebar>
     <main>main section</main>
 

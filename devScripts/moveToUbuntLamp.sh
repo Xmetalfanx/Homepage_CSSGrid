@@ -21,3 +21,5 @@ printf "About to move EVERYTHING to the LAMP directory"
 sudo rsync --exclude "node_modules" -vuhr * /var/www/html/
 
 echo -e "Done"
+
+rm universalSCSS/raw*.css*

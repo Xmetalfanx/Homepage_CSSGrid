@@ -5,11 +5,30 @@ body {
   box-sizing: border-box;
   display: grid;
   grid-template-areas:
-    'header header header header'
-    'sidebar main main main'
-    'footer footer footer footer';
+  'header header header header'
+  'sidebar main main main'
+  'footer footer footer footer';
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: $header-and-footer-height 1fr $header-and-footer-height;
 
   min-height: 100vh;
+}
+
+@media (max-width: 576px) {
+  body {
+    background: var(--white);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:
+    'header'
+    'sidebar'
+    'main'
+    'footer';
+    grid-template-columns: repeat(1, 1fr);
+
+    grid-template-rows: $header-and-footer-height 1fr  1fr $header-and-footer-height;
+
+    min-height: 100vh;
+  }
+
 }

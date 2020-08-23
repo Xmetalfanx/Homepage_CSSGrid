@@ -3,9 +3,11 @@
 
 header,
 footer {
+  align-items: center;
   background: var(--darkGray1);
   color: var(--whitesmoke);
-  padding: 1% 2%;
+  padding: 0 1rem;
+
 }
 
 footer {
@@ -13,12 +15,21 @@ footer {
   grid-area: footer;
   grid-template-areas: 'credits credits social-media social-media';
 
-  .credits {
+  img,
+  svg {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    width: 40px;
+  }
+
+  .footer__credits {
     grid-area: credits;
   }
 
-  .social-media {
+  .footer__social-media {
     grid-area: social-media;
+    text-align: right;
   }
 }
 
@@ -36,13 +47,13 @@ header {
   }
 
   .header-title {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
     grid-area: sectionTitle;
   }
 
   nav {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     grid-area: nav;
     justify-self: end;
@@ -61,24 +72,46 @@ main {
   grid-column: 2 / 5;
 }
 
-/************************** First Media Query *******/
-@media (min-width: var(--breakpoint-md)) {
-  header,
-  footer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  header {
-    grid-template-areas: 'sectionTitle nav';
-  }
-}
-
 // New idea for screen readers
-.hiddenAccessLinkText {
+.hidden-access-link-text {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+// Media Query
+@media (max-width: 576px) {
+  header,
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header {
+    grid-template-areas:
+    'sectionTitle'
+    'nav';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    justify-items: center;
+
+
+    nav {
+      border: 1px solid var(--red);
+      justify-self: center;
+    }
+  }
+
+  sidebar {
+    grid-area: sidebar;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+
 }

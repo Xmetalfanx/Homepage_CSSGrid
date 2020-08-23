@@ -22,5 +22,5 @@ printf "\n\nCleaning up extra files\n"
 #  Cleanup
 rm universalSCSS/raw_style*
 
-read -p "DONE"
+printf "DONE"
 clear
