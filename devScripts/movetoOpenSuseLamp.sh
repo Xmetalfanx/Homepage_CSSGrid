@@ -4,7 +4,7 @@ clear
 
 # 1. compile CSS
 printf "Compiling CSS file\n"
-sassc -m universalSCSS/style.scss universalSCSS/raw_style.css
+sass -c universalSCSS/style.scss:universalSCSS/raw_style.css
 printf "\nCSS file compiled\n"
 
 # 2. Apply auto-prefixer
