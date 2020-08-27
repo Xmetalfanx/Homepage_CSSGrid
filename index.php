@@ -15,7 +15,7 @@
   </head>
   <body>
     <?php include 'modules/header.php'; ?>
-    <sidebar>Sidebar</sidebar>
+    <aside>Sidebar</aside>
     <main>main section</main>
 
     <?php include 'modules/footer.php'; ?>

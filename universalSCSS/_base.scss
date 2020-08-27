@@ -10,7 +10,6 @@ body {
   'footer footer footer footer';
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: $header-and-footer-height 1fr $header-and-footer-height;
-
   min-height: 100vh;
 }
 
@@ -25,9 +24,7 @@ body {
     'main'
     'footer';
     grid-template-columns: repeat(1, 1fr);
-
     grid-template-rows: $header-and-footer-height 1fr  1fr $header-and-footer-height;
-
     min-height: 100vh;
   }
 

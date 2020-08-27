@@ -1,29 +1,37 @@
 .d-none {
-	display: none;
+    display: none;
 }
+
 .d-inline {
-	display: inline;
+    display: inline;
 }
+
 .d-inline-block {
-	display: inline-block;
+    display: inline-block;
 }
+
 .d-block {
-	display: block;
+    display: block;
 }
+
 .d-table {
-	display: table;
+    display: table;
 }
+
 .d-table-row {
-	display: table-row;
+    display: table-row;
 }
+
 .d-table-cell {
-	display: table-cell;
+    display: table-cell;
 }
+
 .d-flex {
-	display: -ms-flexbox;
-	display: flex ;
+    display: -ms-flexbox;
+    display: flex;
 }
+
 .d-inline-flex {
-	display: -ms-inline-flexbox;
-	display: inline-flex ;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
 }

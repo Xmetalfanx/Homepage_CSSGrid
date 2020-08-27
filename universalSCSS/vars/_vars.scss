@@ -13,26 +13,22 @@
 }
 
 // Not sure if this is best here
-.icon
-  {
-    display: inline-block;
-    margin: 2rem 0;
+.icon {
+  display: inline-block;
 
-    &--size32
-    {
-      height: 32px;
-      width: 32px;
-    }
-    &--size40
-    {
-      height: 40px;
-      width: 40px;
-    }
-
-    &--size48
-    {
-      height: 48px;
-      width: 48px;
-    }
-
+  &--size32 {
+    height: 32px;
+    width: 32px;
   }
+
+  &--size40 {
+    height: 40px;
+    width: 40px;
+  }
+
+  &--size48 {
+    height: 48px;
+    width: 48px;
+  }
+
+}
