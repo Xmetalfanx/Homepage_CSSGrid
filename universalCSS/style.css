@@ -25,13 +25,9 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace
 }
-
 :root {
   --red: #ff0000;
   --forestgreen: #065535;
@@ -41,147 +37,134 @@
   --darkGray1: #333333;
   --royalblue: #4169e1;
   --rosegold: #b76e79;
-  --whitesmoke: #f5f5f5;
+  --whitesmoke: #f5f5f5
 }
-
 .icon {
-  display: inline-block;
+  display: inline-block
 }
 .icon--size32 {
   height: 32px;
-  width: 32px;
+  width: 32px
 }
 .icon--size40 {
   height: 40px;
-  width: 40px;
+  width: 40px
 }
 .icon--size48 {
   height: 48px;
-  width: 48px;
+  width: 48px
 }
-
 body {
   background: var(--white);
   box-sizing: border-box;
   display: grid;
-  grid-template-areas: "header header header header" "sidebar main main main" "footer footer footer footer";
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 'header header header header' 'sidebar main main main' 'footer footer footer footer';
+  grid-template-columns: repeat(4,1fr);
   grid-template-rows: 75px 1fr 75px;
-  min-height: 100vh;
+  min-height: 100vh
 }
-
-@media (max-width: 576px) {
+@media (max-width:576px) {
   body {
     background: var(--white);
     box-sizing: border-box;
     display: grid;
-    grid-template-areas: "header" "sidebar" "main" "footer";
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 'header' 'sidebar' 'main' 'footer';
+    grid-template-columns: repeat(1,1fr);
     grid-template-rows: 75px 1fr 1fr 75px;
-    min-height: 100vh;
+    min-height: 100vh
   }
 }
-header,
-footer {
+footer,
+header {
   align-items: center;
   background: var(--darkGray1);
   color: var(--whitesmoke);
-  padding: 0 1rem;
+  padding: 0 1rem
 }
-
 footer {
   display: grid;
   grid-area: footer;
-  grid-template-areas: "credits . . social-media";
-  padding: 2rem 1rem;
+  grid-template-areas: 'credits . . social-media';
+  padding: 2rem 1rem
 }
 footer img {
   display: inline-block;
   height: 40px;
   padding: 0 5px;
   transform: scale(1.25);
-  width: 40px;
+  width: 40px
 }
 footer .credits {
-  grid-area: credits;
+  grid-area: credits
 }
 footer .social-media {
   grid-area: social-media;
-  text-align: right;
+  text-align: right
 }
-
 header {
   align-content: center;
   display: grid;
   grid-area: header;
-  grid-template-areas: "sectionTitle . . nav";
+  grid-template-areas: 'sectionTitle . . nav'
 }
 header * {
   background-color: inherit;
   color: inherit;
   padding: inherit;
-  text-shadow: 2px 2px 1px var(--gray);
+  text-shadow: 2px 2px 1px var(--gray)
 }
 header .header--title {
   font-size: 32px;
   font-weight: 600;
-  grid-area: sectionTitle;
+  grid-area: sectionTitle
 }
 header nav {
   font-size: 25px;
   font-weight: 500;
   grid-area: nav;
-  justify-self: end;
+  justify-self: end
 }
-
 aside {
   background-color: var(--rosegold);
   grid-area: sidebar;
   grid-column: 1/2;
-  padding: 0 0.5rem;
+  padding: 0 .5rem
 }
-
 main {
   background-color: var(--royalblue);
   grid-area: main;
   grid-column: 2/5;
-  padding: 0 0.5rem;
+  padding: 0 .5rem
 }
-
 .hidden-access-link-text {
-  clip: rect(1px, 1px, 1px, 1px);
+  clip: rect(1px,1px,1px,1px);
   height: 1px;
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
-  width: 1px;
+  width: 1px
 }
-
-@media (max-width: 576px) {
-  header,
-footer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+@media (max-width:576px) {
+  footer,
   header {
-    grid-template-areas: "sectionTitle" "nav";
+    grid-template-columns: repeat(2,1fr)
+  }
+  header {
+    grid-template-areas: 'sectionTitle' 'nav';
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
-    padding: 2rem;
+    padding: 2rem
   }
   header nav {
     border: 1px solid var(--red);
-    justify-self: center;
+    justify-self: center
   }
-
   aside {
-    grid-area: sidebar;
+    grid-area: sidebar
   }
-
   main {
-    grid-area: main;
+    grid-area: main
   }
 }
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3VuaXZlcnNhbFNDU1MvdmFycy9fZnJvbUJvb3RzdHJhcC5zY3NzIiwiLi4vdW5pdmVyc2FsU0NTUy9yYXdfc3R5bGUuY3NzIiwiLi4vdW5pdmVyc2FsU0NTUy92YXJzL192YXJzLnNjc3MiLCIuLi91bml2ZXJzYWxTQ1NTL19iYXNlLnNjc3MiLCIuLi91bml2ZXJzYWxTQ1NTL19sYXlvdXQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7RUFDQSxpQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsZUFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0Esc0JBQUE7RUFDQSxzQkFBQTtFQUNBLHNCQUFBO0VBQ0EsdUJBQUE7RUFDQTs7Z0ZBQUE7RUFHQTsrQ0FBQTtBQ0VGOztBQ2hDQTtFQUNFLGNBQUE7RUFDQSxzQkFBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtFQUdBLGVBQUE7RUFDQSxvQkFBQTtFQUNBLG9CQUFBO0VBQ0EsbUJBQUE7RUFDQSxxQkFBQTtBRGlDRjs7QUM3QkE7RUFDRSxxQkFBQTtBRGdDRjtBQzlCRTtFQUNFLFlBQUE7RUFDQSxXQUFBO0FEZ0NKO0FDN0JFO0VBQ0UsWUFBQTtFQUNBLFdBQUE7QUQrQko7QUM1QkU7RUFDRSxZQUFBO0VBQ0EsV0FBQTtBRDhCSjs7QUUxREE7RUFDRSx3QkFBQTtFQUNBLHNCQUFBO0VBQ0EsYUFBQTtFQUNBLHlHQUNBO0VBR0EscUNBQUE7RUFDQSxpQ0FBQTtFQUNBLGlCQUFBO0FGMERGOztBRXZEQTtFQUNFO0lBQ0Usd0JBQUE7SUFDQSxzQkFBQTtJQUNBLGFBQUE7SUFDQSx1REFDQTtJQUlBLHFDQUFBO0lBQ0EscUNBQUE7SUFDQSxpQkFBQTtFRnNERjtBQUNGO0FHL0VBOztFQUVFLG1CQUFBO0VBQ0EsNEJBQUE7RUFDQSx3QkFBQTtFQUNBLGVBQUE7QUhpRkY7O0FHOUVBO0VBQ0UsYUFBQTtFQUNBLGlCQUFBO0VBQ0EsK0NBQUE7RUFDQSxrQkFBQTtBSGlGRjtBRy9FRTtFQUNFLHFCQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSxzQkFBQTtFQUNBLFdBQUE7QUhpRko7QUc5RUU7RUFDRSxrQkFBQTtBSGdGSjtBRzdFRTtFQUNFLHVCQUFBO0VBQ0EsaUJBQUE7QUgrRUo7O0FHM0VBO0VBQ0UscUJBQUE7RUFDQSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSwyQ0FBQTtBSDhFRjtBRzVFRTtFQUNFLHlCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0Esb0NBQUE7QUg4RUo7QUczRUU7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtBSDZFSjtBRzFFRTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxpQkFBQTtBSDRFSjs7QUd4RUE7RUFDRSxpQ0FBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBSDJFRjs7QUd4RUE7RUFDRSxrQ0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FIMkVGOztBR3ZFQTtFQUNFLDhCQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLFVBQUE7QUgwRUY7O0FHdEVBO0VBRUU7O0lBRUUscUNBQUE7RUh3RUY7O0VHckVBO0lBQ0UseUNBQ0E7SUFFQSwwQkFBQTtJQUNBLDJCQUFBO0lBQ0EscUJBQUE7SUFDQSxhQUFBO0VIc0VGO0VHcEVFO0lBQ0UsNEJBQUE7SUFDQSxvQkFBQTtFSHNFSjs7RUdsRUE7SUFDRSxrQkFBQTtFSHFFRjs7RUdsRUE7SUFDRSxlQUFBO0VIcUVGO0FBQ0YiLCJmaWxlIjoic3R5bGUuY3NzIn0= */
+/*# sourceMappingURL=style.css.map */
