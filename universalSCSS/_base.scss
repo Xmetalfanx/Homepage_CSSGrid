@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:regular,italic,700,700italic);
+
 $header-and-footer-height: 75px;
 
 body {
@@ -11,6 +13,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: $header-and-footer-height 1fr $header-and-footer-height;
   min-height: 100vh;
+  font-family: "Noto Sans";
 }
 
 @media (max-width: 576px) {

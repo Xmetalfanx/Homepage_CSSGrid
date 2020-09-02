@@ -70,7 +70,6 @@ aside {
 main {
   background-color: var(--royalblue);
   grid-area: main;
-  grid-column: 2 / 5;
   padding: 0 .5rem;
 }
 
@@ -107,11 +106,4 @@ main {
     }
   }
 
-  aside {
-    grid-area: sidebar;
-  }
-
-  main {
-    grid-area: main;
-  }
 }
