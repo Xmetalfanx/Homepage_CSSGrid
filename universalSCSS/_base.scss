@@ -10,10 +10,10 @@ body {
   'header header header header'
   'sidebar main main main'
   'footer footer footer footer';
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 15% 1fr 1fr 1fr;
   grid-template-rows: $header-and-footer-height 1fr $header-and-footer-height;
   min-height: 100vh;
-  font-family: "Noto Sans";
+  font-family: var(--font-family-roborto);
 }
 
 @media (max-width: 576px) {

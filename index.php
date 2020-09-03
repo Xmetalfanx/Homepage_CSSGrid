@@ -9,6 +9,7 @@
       integrity="sha512-tbcerLEli5ES18n2e790+YMQO1SCDnlcz0BrkTTCL3i3pMlD/1jTGIJWC44JoF6VuDin6HgMMilhrRajCq7Cqg=="
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/universalCSS/style.css" />
 
     <title>Document</title>

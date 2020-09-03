@@ -10,6 +10,8 @@ OSNAME=$(grep -i "^name" /etc/os-release | cut -d= -f2 | sed "s/\"//g" )
 # THE POINT: to have one file for the bash script and not one for each distro
 case $OSNAME in
 
+  "Arch Linux") LAMPLocal="/srv/http" ;;
+
   "openSUSE Tumbleweed") LAMPLocal="/srv/www/htdocs/" ;;
 
   "Solus") LAMPLocal="/var/www/" ;;
@@ -19,7 +21,7 @@ case $OSNAME in
 esac
 
 clear
-printf "About to move EVERYTHING to the LAMP directory"
+echo -e "About to move EVERYTHING to the LAMP directory\n\n"
 sudo rsync --exclude-from "devScripts/excludelist.txt" -ruhv ./* $LAMPLocal
 
 echo -e "Done"
