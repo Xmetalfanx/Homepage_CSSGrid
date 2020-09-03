@@ -15,11 +15,11 @@
     <title>Document</title>
   </head>
   <body>
-    <?php include 'modules/header.php'; ?>
+    <?php include ('modules/header.php'); ?>
     <aside>Sidebar</aside>
     <main>main section</main>
 
-    <?php include 'modules/footer.php'; ?>
+    <?php include ('modules/footer.php'); ?>
 
   </body>
 </html>
