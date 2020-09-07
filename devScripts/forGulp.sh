@@ -1,8 +1,12 @@
 #!/bin/bash
 clear
 
-# The start of most of the script files are the same so i am moving that here and calling this file
+# run gulp tasks
+gulp compile
 
+#############################################################################
+
+# The start of most of the script files are the same so i am moving that here and calling this file
 OSNAME=$(grep -i "^name" /etc/os-release | cut -d= -f2 | sed "s/\"//g" )
 
 
@@ -20,7 +24,7 @@ case $OSNAME in
 
 esac
 
-clear
+
 echo -e "About to move EVERYTHING to the LAMP directory\n\n"
 sudo rsync --exclude-from "devScripts/excludelist.txt" -ruhv ./* $LAMPLocal
 

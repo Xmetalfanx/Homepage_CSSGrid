@@ -1,5 +1,3 @@
-// main Container
-// should this be an id vs a class ?
 
 header,
 footer {
@@ -60,18 +58,27 @@ header {
   }
 }
 
-aside {
-  background-color: var(--rosegold);
-  grid-area: sidebar;
-  grid-column: 1 / 2;
-  padding: 0 .5rem;
+.middle-container {
+  display: grid;
+  grid-area: middle-container;
+  grid-template-areas:
+  'sidebar . . main';
+
+  * {
+    padding: 0 .5rem;
+  }
+
+  aside {
+    grid-area: sidebar;
+  }
+
+  main {
+    grid-area: main;
+    grid-column: span 3;
+  }
+
 }
 
-main {
-  background-color: var(--royalblue);
-  grid-area: main;
-  padding: 0 .5rem;
-}
 
 // New idea for screen readers
 .hidden-access-link-text {
@@ -86,24 +93,40 @@ main {
 // Media Query
 @media (max-width: 576px) {
 
-  header,
-  footer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   header {
     grid-template-areas:
     'sectionTitle'
     'nav';
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
     justify-items: center;
-    padding: 2rem;
+
+    * {
+      grid-area: inherit;
+    }
 
     nav {
       border: 1px solid var(--red);
       justify-self: center;
     }
+
+    .header--title {
+      font-size: 32px;
+      font-weight: 600;
+    }
+  }
+
+  .middle-container {
+    grid-area: middle-container;
+    grid-template-areas:
+    'sidebar'
+    'main';
+    grid-template-rows: repeat(2, 1fr);
+
+    * {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 .5rem;
+      grid-area: inherit;
+    }
+
   }
 
 }

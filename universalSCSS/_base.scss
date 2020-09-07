@@ -1,19 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:regular,italic,700,700italic);
 
-$header-and-footer-height: 75px;
+$head-and-foot-height-default: 75px;
+$head-and-foot-height-mobile: minmax($head-and-foot-height-default, 150px);
 
 body {
   background: var(--white);
   box-sizing: border-box;
   display: grid;
-  grid-template-areas:
-  'header header header header'
-  'sidebar main main main'
-  'footer footer footer footer';
-  grid-template-columns: 15% 1fr 1fr 1fr;
-  grid-template-rows: $header-and-footer-height 1fr $header-and-footer-height;
-  min-height: 100vh;
   font-family: var(--font-family-roborto);
+  grid-template-areas:
+  'header           header        header  header'
+  'middle-container    middle-container   middle-container    middle-container'
+  'footer   footer  footer  footer';
+  grid-template-columns: 15% 1fr 1fr 1fr;
+  grid-template-rows: $head-and-foot-height-default 1fr $head-and-foot-height-default;
+  min-height: 100vh;
 }
 
 @media (max-width: 576px) {
@@ -24,10 +24,10 @@ body {
     grid-template-areas:
     'header'
     'sidebar'
-    'main'
+    'middle-container'
     'footer';
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: $header-and-footer-height 1fr  1fr $header-and-footer-height;
+    grid-template-columns: 1fr;
+    grid-template-rows: $head-and-foot-height-mobile auto auto $head-and-foot-height-mobile;
     min-height: 100vh;
   }
 
