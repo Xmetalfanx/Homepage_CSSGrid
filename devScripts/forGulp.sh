@@ -24,7 +24,6 @@ case $OSNAME in
 
 esac
 
-
 echo -e "About to move EVERYTHING to the LAMP directory\n\n"
 sudo rsync --exclude-from "devScripts/excludelist.txt" -ruhv ./* $LAMPLocal
 

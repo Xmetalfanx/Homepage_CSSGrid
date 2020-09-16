@@ -2,4 +2,5 @@
 <html lang="en">
   <?php include ('modules/headTag.php'); ?>
   <body>
-    <?php include ('modules/header.php'); ?>
+    <div class="grid-container">
+      <?php include ('modules/header.php'); ?>

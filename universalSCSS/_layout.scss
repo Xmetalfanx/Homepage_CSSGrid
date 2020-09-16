@@ -1,24 +1,31 @@
 
+
 header,
 footer {
   align-items: center;
-  background: var(--darkGray1);
-  color: var(--whitesmoke);
-  padding: 0 1rem;
+  background: var(--themebgcolor);
+  color: var(--themecolor);
+  display: grid;
+  height: 75px;
+  justify-content: space-between;
+  padding: 0 15px;
 }
 
 footer {
-  display: grid;
+  align-self: end;
   grid-area: footer;
-  grid-template-areas: 'credits . . social-media';
-  padding: 2rem 1rem;
+  grid-template-areas: 'credits social-media';
+  grid-template-columns: repeat(2, 1fr);
+
+  .footer__text {
+    padding-right: 1rem;
+  }
 
   img {
     display: inline-block;
-    height: 40px;
-    padding: 0 5px;
+    height: 42px;
     transform: scale(1.25);
-    width: 40px;
+    width: 42px;
   }
 
   .credits {
@@ -32,15 +39,12 @@ footer {
 }
 
 header {
-  align-content: center;
-  display: grid;
   grid-area: header;
-  grid-template-areas: 'sectionTitle . . nav';
+  grid-template-areas: 'sectionTitle nav';
 
   * {
     background-color: inherit;
     color: inherit;
-    padding: inherit;
     text-shadow: 2px 2px 1px var(--gray);
   }
 
@@ -50,19 +54,28 @@ header {
     grid-area: sectionTitle;
   }
 
-  nav {
-    font-size: 25px;
-    font-weight: 500;
+  .nav-links {
+    display: flex;
     grid-area: nav;
+    justify-content: space-around;
     justify-self: end;
+
+    a {
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+
+    li {
+      padding: 0 .75rem;
+    }
   }
 }
 
 .middle-container {
   display: grid;
   grid-area: middle-container;
-  grid-template-areas:
-  'sidebar . . main';
+  grid-template-areas: 'sidebar main';
 
   * {
     padding: 0 .5rem;
@@ -76,9 +89,7 @@ header {
     grid-area: main;
     grid-column: span 3;
   }
-
 }
-
 
 // New idea for screen readers
 .hidden-access-link-text {
@@ -92,18 +103,15 @@ header {
 
 // Media Query
 @media (max-width: 576px) {
-
   header {
-    grid-template-areas:
-    'sectionTitle'
-    'nav';
+    grid-template-areas: 'sectionTitle' 'nav';
     justify-items: center;
 
     * {
       grid-area: inherit;
     }
 
-    nav {
+    .nav-links {
       border: 1px solid var(--red);
       justify-self: center;
     }
@@ -116,17 +124,13 @@ header {
 
   .middle-container {
     grid-area: middle-container;
-    grid-template-areas:
-    'sidebar'
-    'main';
+    grid-template-areas: 'sidebar' 'main';
     grid-template-rows: repeat(2, 1fr);
 
     * {
+      grid-area: inherit;
       grid-template-columns: repeat(2, 1fr);
       padding: 0 .5rem;
-      grid-area: inherit;
     }
-
   }
-
 }
