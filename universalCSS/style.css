@@ -109,10 +109,11 @@ header * {
   color: inherit;
   text-shadow: 2px 2px 1px var(--gray)
 }
-header .header--title {
+header .header__title {
   font-size: 32px;
   font-weight: 600;
-  grid-area: sectionTitle
+  grid-area: sectionTitle;
+  letter-spacing: 4px
 }
 header .nav-links {
   display: flex;

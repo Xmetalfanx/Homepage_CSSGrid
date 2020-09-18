@@ -1,4 +1,5 @@
 <?php include ('modules/footer.php'); ?>
-</div>
+</div> <!-- Ends grid-container div -->
+
 </body>
 </html>

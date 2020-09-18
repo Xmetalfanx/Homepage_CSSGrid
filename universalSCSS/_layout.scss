@@ -48,10 +48,11 @@ header {
     text-shadow: 2px 2px 1px var(--gray);
   }
 
-  .header--title {
+  .header__title {
     font-size: 32px;
     font-weight: 600;
     grid-area: sectionTitle;
+    letter-spacing: 4px;
   }
 
   .nav-links {

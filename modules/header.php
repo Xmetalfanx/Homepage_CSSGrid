@@ -1,4 +1,6 @@
 <header>
-    <div class="header--title">Title Here</div>
+    <div class="header__title">
+        Title Here
+    </div>
     <?php include ('mainNav.php'); ?>
 </header>
