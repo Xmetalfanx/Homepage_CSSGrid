@@ -73,24 +73,16 @@ header {
   }
 }
 
-.middle-container {
-  display: grid;
-  grid-area: middle-container;
-  grid-template-areas: 'sidebar main';
-
-  * {
-    padding: 0 .5rem;
-  }
-
-  aside {
-    grid-area: sidebar;
-  }
-
-  main {
-    grid-area: main;
-    grid-column: span 3;
-  }
+aside {
+  grid-area: sidebar;
+  background-color: red;
 }
+
+main {
+  grid-area: main;
+  background-color: royalblue;
+}
+
 
 // New idea for screen readers
 .hidden-access-link-text {

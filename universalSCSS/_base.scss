@@ -21,10 +21,10 @@ body {
   .grid-container {
     display: grid;
     grid-template-areas:
-    'header'
-    'middle-container'
-    'footer';
-    grid-template-columns: 1fr;
+    'header header'
+    'sidebar main'
+    'footer footer';
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: $head-and-foot-height-default 1fr $head-and-foot-height-default;
     height: 100vh;
   }
@@ -37,10 +37,11 @@ body {
     display: grid;
     grid-template-areas:
     'header'
-    'middle-container'
+    'sidebar'
+    'main'
     'footer';
     grid-template-columns: 1fr;
-    grid-template-rows: $head-and-foot-height-mobile auto $head-and-foot-height-mobile;
+    grid-template-rows: $head-and-foot-height-mobile 1fr 1fr $head-and-foot-height-mobile;
     min-height: 100vh;
   }
 
