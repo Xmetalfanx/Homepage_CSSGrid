@@ -6,6 +6,3 @@
       <!-- mainNav div is included in the header.php -->
       <?php include ('modules/header.php'); ?>
 
-<div class="middle-container">
-
-</div>

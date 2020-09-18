@@ -3,8 +3,7 @@
     <aside>Sidebar</aside>
     <main>main section</main>
   `;
-  include ('templates/baseTemplate.php');
-
+  include ('templates/baseTemplateTop.php');
 ?>
 
 
