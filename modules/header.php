@@ -1,6 +1,6 @@
 <header>
     <div class="header__title">
-        Title Here
+        Xmetal's Homepage
     </div>
-    <?php include ('mainNav.php'); ?>
+    <!-- <?php include ('mainNav.php'); ?> -->
 </header>

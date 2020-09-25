@@ -1,0 +1,70 @@
+.frontpage-section {
+  display: grid;
+  grid-template-areas: "site-section" "git-section";
+  justify-items: center;
+  margin-top: 20px;
+  padding: 0 1rem;
+}
+.frontpage-section .site-section,
+.frontpage-section .git-section {
+  display: grid;
+}
+.frontpage-section .site-section .card,
+.frontpage-section .git-section .card {
+  box-shadow: none;
+  max-height: 500px;
+}
+.frontpage-section .site-section .card .card__header,
+.frontpage-section .git-section .card .card__header {
+  font-size: 24px;
+  padding: 0.5rem 1rem;
+}
+.frontpage-section .site-section .card .card__header--darkBG,
+.frontpage-section .git-section .card .card__header--darkBG {
+  background-color: white;
+  color: black;
+}
+.frontpage-section .site-section .card .card__header--lightBG,
+.frontpage-section .git-section .card .card__header--lightBG {
+  background-color: inherit;
+  color: inherit;
+}
+.frontpage-section .site-section .card .card__body,
+.frontpage-section .git-section .card .card__body {
+  font-weight: 200;
+}
+.frontpage-section .site-section {
+  grid-area: site-section;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+.frontpage-section .site-section img {
+  margin: 0 auto;
+  max-height: 500px;
+  min-width: 80%;
+}
+.frontpage-section .site-section .card {
+  width: 85%;
+  margin: 0 auto;
+}
+.frontpage-section .site-section .card .card__body {
+  padding: 1rem;
+}
+.frontpage-section .git-section {
+  background-color: rgba(250, 247, 243, 0.5);
+  grid-area: git-section;
+  grid-template-columns: repeat(2, 1fr);
+}
+.frontpage-section .git-section .card {
+  width: 80%;
+  margin: 0 auto;
+}
+.frontpage-section .git-section .card .card__header {
+  text-align: center;
+}
+.frontpage-section .git-section .git-icons {
+  color: var(--themebgcolor);
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+}

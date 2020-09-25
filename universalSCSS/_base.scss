@@ -2,7 +2,8 @@
 $head-and-foot-height-default: 75px;
 $head-and-foot-height-mobile: minmax($head-and-foot-height-default, 150px);
 
-* {
+*,
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

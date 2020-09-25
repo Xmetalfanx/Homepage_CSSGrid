@@ -1,0 +1,102 @@
+// Things specific to the landing page of the site
+// I FULLY ADMIT that alot of this seems too hyper specific ... i will refactor the code later
+
+// The main part of the frontpage, ... sort of a container
+.frontpage-section {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-areas:
+  'site-section   site-section'
+  'site-section   site-section'
+  'git-section    git-section'
+  'git-section    git-section'
+  ;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 20px;
+  padding: 0 1rem;
+
+  .site-section,
+  .git-section {
+    // justify-content: space-around;
+    display: inline-grid;
+    grid-template-columns: inherit;
+
+    .card {
+      box-shadow: none;
+      max-height: 500px ;
+
+      .card__header {
+        font-size: 24px;
+        padding: .5rem 1rem;
+
+        // White for the background of the header and black text
+        &--darkBG {
+          background-color: white;
+          color: black;
+        }
+
+        // A dark BG (maybe not black, I forgot right now) and White-ish text
+        &--lightBG {
+          background-color: inherit;
+          color: inherit;
+        }
+      }
+    }
+
+    // For Titles, so they can span across two columns
+    .frontpage-title
+    {
+      font-size: 3rem;
+      font-weight: 900;
+      grid-column: span 2;
+      text-align: center;
+    }
+  }
+
+  // for images and descriptions for two main website sections
+  .site-section {
+    grid-area: site-section;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: inherit;
+
+    img {
+      margin: 0 auto;
+      max-height: 500px;
+      min-width: 80%;
+    }
+    // for bigger images to the side
+
+    .card {
+      width: 85%;
+      margin: 0 auto;
+
+      .card__body {
+        padding: 1rem;
+      }
+    }
+  }
+
+  // for describing my git projects
+  .git-section {
+    background-color: rgba(250,247,243,.50);
+    grid-area: git-section;
+
+    .card
+    {
+      width: 80%;
+      margin: 0 auto;
+
+      .card__header {
+        text-align: center;
+      }
+    }
+
+    .git-icons {
+      color: var(--themebgcolor);
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: .50rem;
+    }
+  }
+}

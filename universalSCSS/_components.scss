@@ -1,0 +1,23 @@
+
+.card {
+  border-radius: .25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  word-wrap: break-word;
+
+  .card--bordered {
+    border: 1px solid rgba(0, 0, 0, .125);
+  }
+
+  .card__header,
+  .card__body
+  {
+    padding: 1.4rem;
+  }
+
+  .card__header {
+    background-color: var(--themebgcolor);
+    color: var(--themefgcolor);
+    font-weight: 800;
+  }
+
+}
