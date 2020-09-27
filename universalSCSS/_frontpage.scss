@@ -68,11 +68,15 @@
     // for bigger images to the side
 
     .card {
-      width: 85%;
+      width: 90%;
       margin: 0 auto;
 
       .card__body {
         padding: 1rem;
+
+        p {
+          margin: 10px 0;
+        }
       }
     }
   }

@@ -70,3 +70,39 @@
 .w-95 {
   width: 95%;
 }
+
+/********************* Typography ***********************/
+.font-bold {
+  font-weight: 900;
+
+}
+
+.underline
+{
+  text-decoration: underline;
+}
+/*********************** End Typography *********************/
+
+
+ul {
+	margin-top: 0;
+	margin-bottom: 1rem;
+
+  li {
+    list-style-type: square;
+    margin: .5rem 0 .5rem 2rem;
+
+
+    ul > li {
+     margin: 0 0 0 2rem ;
+    }
+  }
+
+  ul {
+		margin-bottom: 0;
+	}
+	ol {
+		margin-bottom: 0;
+  }
+
+}
